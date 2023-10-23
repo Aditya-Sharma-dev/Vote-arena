@@ -8,12 +8,6 @@ import data from "../src/sample.json";
 function App() {
   const [todayMatchDetails, setTodayMatchDetails] = useState([]);
   const [fixtures, setFixtures] = useState([]);
-  const recieveToday = (data) => {
-    setTodayMatchDetails(data);
-    console.log(todayMatchDetails);
-  };
-
-  // var filterData;
 
   useEffect(() => {
     function updateData() {
@@ -41,7 +35,9 @@ function App() {
 
   return (
     <div className="app">
-      <Navbar />
+      <div className="navbar">
+        <Navbar />
+      </div>
       {todayMatchDetails.map((item) => (
         <div key={item.id} className="container">
           <Votingarea details={item} />
