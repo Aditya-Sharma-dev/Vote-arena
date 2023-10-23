@@ -5,10 +5,12 @@ import UpcomingFixtures from "./components/UpcomingFixtures";
 import Votingarea from "./components/Votingarea";
 import data from "../src/sample.json";
 import Home from "./components/Home";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function App() {
   const [todayMatchDetails, setTodayMatchDetails] = useState([]);
   const [fixtures, setFixtures] = useState([]);
+  const { isAuthenticated } = useAuth0();
 
   useEffect(() => {
     function updateData() {
@@ -32,20 +34,26 @@ function App() {
       console.log(todayMatchDetails);
     }
     matchDate();
+    // eslint-disable-next-line
   }, []);
 
   return (
     <div className="app">
-      {/* <div className="navbar">
-        <Navbar />
-      </div>
-      {todayMatchDetails.map((item) => (
-        <div key={item.id} className="container">
-          <Votingarea details={item} />
-        </div>
-      ))}
-      <UpcomingFixtures todayMatch={fixtures} /> */}
-      <Home/>
+      {!isAuthenticated ? (
+        <Home />
+      ) : (
+        <>
+          <div className="navbar">
+            <Navbar />
+          </div>
+          {todayMatchDetails.map((item) => (
+            <div key={item.id} className="container">
+              <Votingarea details={item} />
+            </div>
+          ))}
+          <UpcomingFixtures todayMatch={fixtures} />
+        </>
+      )}
     </div>
   );
 }

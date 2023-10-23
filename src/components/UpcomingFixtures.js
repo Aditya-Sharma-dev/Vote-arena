@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../styles/UpcomingFixtures.css";
 import SingleMatch from "./SingleMatch";
 import FlipMove from "react-flip-move";

@@ -1,0 +1,9 @@
+.right{
+    right: 0px !important;
+    align-items: center;
+}
+.right p{
+    margin-right: 10px;
+    margin-top: 5px;
+    padding-top: 5px;
+}

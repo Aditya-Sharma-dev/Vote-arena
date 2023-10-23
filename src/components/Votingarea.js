@@ -3,7 +3,7 @@ import "../styles/Votingarea.css";
 
 function Votingarea(props) {
   return (
-    <div className="container text-center text-bg-warning border border-dark">
+    <div className="container text-center text-bg-warning border border-dark" id="voting-top">
       <div className="row border border-dark">
         <div className="col border border-dark">
           <button type="button" className="btn btn-dark">

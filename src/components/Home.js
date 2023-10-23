@@ -1,14 +1,16 @@
 import React from "react";
 import "../styles/Home.css";
 import imgb from "../assets/icc-flyer.png";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function Home() {
+  const { loginWithRedirect } = useAuth0();
   return (
     <div className="container">
       <div className="home">
         <h1>
           <center>
-            <b>Vote arena </b>
+            <b>Vote arena</b>
           </center>
         </h1>
         <div className="body-area">
@@ -19,8 +21,8 @@ function Home() {
             <h2>
               <strong> Why Vote Arena? </strong>
             </h2>
-            <p>
-              <ul>
+            <ul>
+              <p>
                 <li>
                   <strong>It's Fast: </strong>Voting takes just a few clicks.
                 </li>
@@ -32,8 +34,8 @@ function Home() {
                   <strong>It's Social:</strong> Connect with people worldwide
                   over shared interests.
                 </li>
-              </ul>
-            </p>
+              </p>
+            </ul>
             <h2>
               <strong>Get Started: </strong>
             </h2>
@@ -41,7 +43,11 @@ function Home() {
               Join the fun and start voting today. Sign up now! Turn everyday
               decisions into exhilarating experiences with Vote Arena!
             </p>
-            <button type="button" class="btn btn-dark">
+            <button
+              type="button"
+              className="btn btn-dark"
+              onClick={() => loginWithRedirect()}
+            >
               Click here to begin your experience
             </button>
           </div>
