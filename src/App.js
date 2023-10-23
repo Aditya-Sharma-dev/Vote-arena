@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import UpcomingFixtures from "./components/UpcomingFixtures";
 import Votingarea from "./components/Votingarea";
 import data from "../src/sample.json";
+import Home from "./components/Home";
 
 function App() {
   const [todayMatchDetails, setTodayMatchDetails] = useState([]);
@@ -35,7 +36,7 @@ function App() {
 
   return (
     <div className="app">
-      <div className="navbar">
+      {/* <div className="navbar">
         <Navbar />
       </div>
       {todayMatchDetails.map((item) => (
@@ -43,7 +44,8 @@ function App() {
           <Votingarea details={item} />
         </div>
       ))}
-      <UpcomingFixtures todayMatch={fixtures} />
+      <UpcomingFixtures todayMatch={fixtures} /> */}
+      <Home/>
     </div>
   );
 }
