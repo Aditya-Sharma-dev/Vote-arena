@@ -10,7 +10,7 @@ function Home() {
       <div className="home">
         <h1>
           <center>
-            <b>Vote arena</b>
+            <b>Vote Arena</b>
           </center>
         </h1>
         <div className="body-area">
@@ -54,7 +54,7 @@ function Home() {
         </div>
       </div>
       <footer style={{ marginTop: "15px" }}>
-        <center>Made with ❤️ in INDIA by Aditya</center>
+        <center> <strong>Made with ❤️ in INDIA by <a href="www.github.com/Aditya-sharma-dev/" target="_blank">Aditya</a></strong></center>
       </footer>
     </div>
   );

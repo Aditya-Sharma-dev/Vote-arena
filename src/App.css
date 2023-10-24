@@ -1,6 +1,3 @@
-*{
-  /* margin: 1px; */
-}
 .app{
   /* background-color: #ff7e47; */
   /* background: radial-gradient(circle, #ff5733, #33ff33, #3366ff); */
@@ -8,4 +5,6 @@
   overflow: hidden;
   font-family: "Roboto", sans-serif;
 }
-
+.wrapper{
+  margin-top: 10% !important;
+}

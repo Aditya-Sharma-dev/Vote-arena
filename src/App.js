@@ -6,6 +6,7 @@ import Votingarea from "./components/Votingarea";
 import data from "../src/sample.json";
 import Home from "./components/Home";
 import { useAuth0 } from "@auth0/auth0-react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   const [todayMatchDetails, setTodayMatchDetails] = useState([]);
@@ -39,12 +40,24 @@ function App() {
 
   return (
     <div className="app">
+      <Router>
+        {/* <Switch> */}
       {!isAuthenticated ? (
-        <Home />
+        // <Route exact path="/">
+          <Home />
+        // </Route>
       ) : (
         <>
+          {/* <Route exact path="/home"> */}
           <div className="navbar">
             <Navbar />
+          </div>
+          <div className="wrapper">
+            <center>
+              <h2>
+                <strong>Today's Matches</strong>
+              </h2>
+            </center>
           </div>
           {todayMatchDetails.map((item) => (
             <div key={item.id} className="container">
@@ -52,8 +65,11 @@ function App() {
             </div>
           ))}
           <UpcomingFixtures todayMatch={fixtures} />
-        </>
+          {/* </Route> */}
+          </>
       )}
+        {/* </Switch> */}
+      </Router>
     </div>
   );
 }
