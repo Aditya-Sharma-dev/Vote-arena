@@ -1,22 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/Votingarea.css";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function Votingarea(props) {
+  const { user } = useAuth0();
+  const [selectedOption, setSelectedOption] = useState(null);
+
+  const handleRadioChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
+
+  const handleVote = () => {
+    if (selectedOption !== null) {
+      const voteData = {
+        user: user.name,
+        option: selectedOption,
+        timestamp: new Date().toISOString(),
+      };
+
+      fetch("http://localhost:3001/store-vote", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(voteData),
+      })
+        .then((response) => {
+          if (response.ok) {
+            alert("Vote submitted successfully!");
+          } else {
+            alert("Failed to submit vote.");
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    } else {
+      alert("Please select an option before voting.");
+    }
+  };
   return (
     <>
       <div
         className="container text-center border border-dark border-5"
         id="oko"
       >
-        <div class="row align-items-start">
-          <div class="col border border-dark border-2">
+        <div className="row align-items-start">
+          <div className="col border border-dark border-2">
             <strong>{props.details.teams[0]}</strong>
           </div>
-          <div class="col border border-dark border-2">Timer ends in</div>
-          <div class="col border border-dark border-2">
+          <div className="col border border-dark border-2">Timer ends in</div>
+          <div className="col border border-dark border-2">
             <strong>{props.details.teams[1]}</strong>
           </div>
-          <div class="row align-items-center p-3">
+          <div className="row align-items-center p-3">
             <center>
               <button
                 type="button"
@@ -29,88 +66,77 @@ function Votingarea(props) {
             </center>
           </div>
           <div
-            class="modal fade"
+            className="modal fade"
             id="exampleModal"
             tabindex="-1"
             aria-labelledby="exampleModalLabel"
             aria-hidden="true"
           >
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h1 className="modal-title fs-5" id="exampleModalLabel">
                     Please Vote your team!
                   </h1>
                   <button
                     type="button"
-                    class="btn-close"
+                    className="btn-close"
                     data-bs-dismiss="modal"
                     aria-label="Close"
                   ></button>
                 </div>
-                <div class="modal-body">
-                  <div class="form-check">
+                <div className="modal-body">
+                  <div className="form-check">
                     <input
-                      class="form-check-input"
+                      className="form-check-input"
                       type="radio"
                       name="exampleRadios"
                       id="exampleRadios1"
                       value={props.details.teams[0]}
-                      checked
+                      onChange={handleRadioChange}
                     />
-                    <label class="form-check-label" for="exampleRadios1">
-                      <p>
-                      {props.details.teams[0]}
-                      </p>
+                    <label
+                      className="form-check-label"
+                      htmlFor="exampleRadios1"
+                    >
+                      <p>{props.details.teams[0]}</p>
                     </label>
                   </div>
-                  <div class="form-check">
+                  <div className="form-check">
                     <input
-                      class="form-check-input"
+                      className="form-check-input"
                       type="radio"
                       name="exampleRadios"
                       id="exampleRadios2"
-                      value={props.details.teams[0]}
+                      onChange={handleRadioChange}
+                      value={props.details.teams[1]}
                     />
-                    <label class="form-check-label" for="exampleRadios2">
-                      <p>
-                      {props.details.teams[1]}
-                      </p>
+                    <label
+                      className="form-check-label"
+                      htmlFor="exampleRadios2"
+                    >
+                      <p>{props.details.teams[1]}</p>
                     </label>
                   </div>
                 </div>
-                <div class="modal-footer">
+                <div className="modal-footer">
                   <button
                     type="button"
-                    class="btn btn-secondary"
+                    className="btn btn-secondary"
                     data-bs-dismiss="modal"
                   >
                     Close
                   </button>
-                  <button type="button" class="btn btn-success">
+                  <button
+                    type="button"
+                    className="btn btn-success"
+                    onClick={handleVote}
+                  >
                     Save changes
                   </button>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="container text-center text-bg-warning border border-dark"
-        id="voting-top"
-      >
-        <div className="row border border-dark">
-          <div className="col border border-dark">
-            <button type="button" className="btn btn-dark">
-              {props.details.teams[0]}
-            </button>
-          </div>
-          <div className="col-6 border border-dark">Timer ends in</div>
-          <div className="col border border-dark">
-            <button type="button" className="btn btn-dark">
-              {props.details.teams[1]}
-            </button>
           </div>
         </div>
       </div>

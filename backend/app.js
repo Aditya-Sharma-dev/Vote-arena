@@ -1,18 +1,56 @@
-const express=require("express");
-const app=express();
+// server.js
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
+const bodyParser = require("body-parser");
 
-app.use(express.json());
+const app = express();
+const port = process.env.PORT || 3001;
 
-const PORT = process.env.PORT || 3001;
+// Middleware
+app.use(cors());
+app.use(bodyParser.json());
 
-app.get("/status", (req, res) => {
-    const status = {
-       "Status": "Running"
-    };
-    res.send(status);
- });
+// MongoDB connection
+mongoose.connect("mongodb://localhost:27017/wcdb", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+const db = mongoose.connection;
 
-app.listen(PORT, ()=>{
-    console.log("Server is running");
-})
+db.on("error", console.error.bind(console, "MongoDB connection error:"));
+db.once("open", () => {
+  console.log("Connected to MongoDB");
+});
 
+// Create a schema for vote data
+const voteSchema = new mongoose.Schema({
+  user: String,
+  option: String,
+  timestamp: Date,
+});
+
+const Vote = mongoose.model("Vote", voteSchema);
+
+// Handle POST requests for storing votes
+app.post("/store-vote", async (req, res) => {
+  const { user, option, timestamp } = req.body;
+
+  if (!user || !option || !timestamp) {
+    return res.status(400).json({ error: "Option and timestamp are required" });
+  }
+
+  try {
+    const vote = new Vote({ user, option, timestamp });
+    await vote.save();
+    res.status(201).json({ message: "Vote stored successfully" });
+    console.log(vote);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Failed to store vote" });
+  }
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
