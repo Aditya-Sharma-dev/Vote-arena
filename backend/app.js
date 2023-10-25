@@ -32,6 +32,13 @@ const voteSchema = new mongoose.Schema({
 
 const Vote = mongoose.model("Vote", voteSchema);
 
+const yourSchema = new mongoose.Schema({
+    name: String,
+    points: Number,
+});
+  
+const YourModel = mongoose.model('YourModel', yourSchema);
+
 // Handle POST requests for storing votes
 app.post("/store-vote", async (req, res) => {
   const { user, option, timestamp } = req.body;
@@ -50,6 +57,17 @@ app.post("/store-vote", async (req, res) => {
     res.status(500).json({ error: "Failed to store vote" });
   }
 });
+
+app.get('/api/fetch-data', async (req, res) => {
+    try {
+      const data = await YourModel.find(); 
+      res.json(data);
+      console.log(data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      res.status(500).json({ error: 'Failed to fetch data' });
+    }
+  });
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

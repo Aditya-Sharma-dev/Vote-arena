@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../styles/Votingarea.css";
 import { useAuth0 } from "@auth0/auth0-react";
+import Countdown from "react-countdown";
 
 function Votingarea(props) {
   const { user } = useAuth0();
@@ -39,6 +40,28 @@ function Votingarea(props) {
       alert("Please select an option before voting.");
     }
   };
+
+  const targetDate = new Date(props.details.dateTimeGMT).getTime();
+
+  var timerValid;
+
+  const renderer = ({ days, hours, minutes, seconds, completed }) => {
+    timerValid=completed;
+    if (completed) {
+      return <span><b>You are Late!!</b></span>;
+    } else {
+      return (
+        <div>
+          <span>{days} days</span>
+          <span>{hours} hours</span>
+          <span>{minutes} minutes</span>
+          <span>{seconds} seconds</span>
+        </div>
+      );
+    }
+  };
+
+  const updatedClass=`${'btn btn-dark'} ${!timerValid ? 'disabled' : ''}`;
   return (
     <>
       <div
@@ -49,7 +72,10 @@ function Votingarea(props) {
           <div className="col border border-dark border-2">
             <strong>{props.details.teams[0]}</strong>
           </div>
-          <div className="col border border-dark border-2">Timer ends in</div>
+          <div className="col border border-dark border-2">
+            Timer ends in <br />
+              <Countdown date={targetDate} renderer={renderer} />
+          </div>
           <div className="col border border-dark border-2">
             <strong>{props.details.teams[1]}</strong>
           </div>
@@ -57,7 +83,7 @@ function Votingarea(props) {
             <center>
               <button
                 type="button"
-                className="btn btn-dark"
+                className={updatedClass}
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
               >
