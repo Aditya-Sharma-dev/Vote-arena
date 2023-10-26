@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Navbar from "./Navbar";
 
 function Leaderboard() {
   const [data, setData] = useState([]);
@@ -20,6 +21,9 @@ function Leaderboard() {
   }, []);
   return (
     <div className="container">
+       <div className="navbar">
+        <Navbar />
+      </div>
       <h2>
         <center>leaderboard</center>
       </h2>

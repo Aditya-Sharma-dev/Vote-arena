@@ -5,6 +5,14 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 function Home() {
   const { loginWithRedirect } = useAuth0();
+  
+  const handleLogin = async () => {
+    await loginWithRedirect({
+      appState: {
+        returnTo: "/home",
+      },
+    });
+  };
   return (
     <div className="container">
       <div className="home">
@@ -46,7 +54,7 @@ function Home() {
             <button
               type="button"
               className="btn btn-dark"
-              onClick={() => loginWithRedirect()}
+              onClick={handleLogin}
             >
               Click here to begin your experience
             </button>

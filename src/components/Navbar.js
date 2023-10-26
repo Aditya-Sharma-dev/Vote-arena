@@ -1,9 +1,21 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import "../styles/Navbar.css";
+import { Link } from "react-router-dom";
 
 function Navbar() {
-  const { user, logout } = useAuth0();
+  const { user, logout, isAuthenticated } = useAuth0();
+  // const url= window.location.origin;
+  const handleLogout = () => {
+    logout({
+      // logoutParams: {
+      //   returnTo: window.location.origin,
+      // },
+      openUrl(url){
+        window.location.replace(url);
+      }
+    }); 
+  };
   return (
     <nav
       className="navbar bg-dark navbar-expand-lg border-bottom border-body fixed-top"
@@ -31,14 +43,14 @@ function Navbar() {
         >
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/">
+              <Link className="nav-link active" aria-current="page" to="/home">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">
+              <Link className="nav-link" to="/leaderboard">
                 Leaderboard
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/">
@@ -48,16 +60,18 @@ function Navbar() {
           </ul>
           <div className="right">
             <form className="d-flex" role="search">
-              <p style={{ color: "white" }}>Welcome, {user.name}</p>
-              <button
-                className="btn btn-outline-danger"
-                type="submit"
-                onClick={() =>
-                  logout({ logoutParams: { returnTo: window.location.origin } })
-                }
-              >
-                Log Out
-              </button>
+              {isAuthenticated && (
+                <>
+                  <p style={{ color: "white" }}>Welcome, {user.name}</p>
+                  <button
+                    className="btn btn-outline-danger"
+                    type="submit"
+                    onClick={handleLogout}
+                  >
+                    Log Out
+                  </button>
+                </>
+              )}
             </form>
           </div>
         </div>
