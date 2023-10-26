@@ -6,7 +6,7 @@ function Leaderboard() {
 
   useEffect(() => {
     // Fetch data from the backend API route
-    fetch("/api/fetch-data")
+    fetch("http://localhost:3001/api/fetch-data")
       .then((response) => {
         console.log(response.status);
         return response.json();
@@ -21,21 +21,27 @@ function Leaderboard() {
   }, []);
   return (
     <div className="container">
-       <div className="navbar">
+      <div className="navbar">
         <Navbar />
       </div>
-      <h2>
-        <center>leaderboard</center>
+      <h2 className="mt-5">
+        <strong>
+          <center>Leaderboard</center>
+        </strong>
       </h2>
       <div>
-        {/* <h2>Data from MongoDB Collection</h2> */}
-        <ul>
+        <table className="table table-striped">
+          <tr>
+            <th>UserName</th>
+            <th>Points</th>
+          </tr>
           {data.map((item) => (
-            <li key={item._id}>
-              Field 1: {item.name}, Field 2: {item.points}
-            </li>
+            <tr>
+              <td>{item.name}</td>
+              <td>{item.points}</td>
+            </tr>
           ))}
-        </ul>
+        </table>
       </div>
     </div>
   );

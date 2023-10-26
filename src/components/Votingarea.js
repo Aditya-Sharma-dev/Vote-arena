@@ -41,27 +41,36 @@ function Votingarea(props) {
     }
   };
 
-  const targetDate = new Date(props.details.dateTimeGMT).getTime();
+  const targetDate = new Date(props.details.dateTimeGMT);
+  const newDate = new Date(targetDate.getTime() + (5.5*60*60*1000));
 
   var timerValid;
 
-  const renderer = ({ days, hours, minutes, seconds, completed }) => {
-    timerValid=completed;
+  const renderer = ({ hours, minutes, seconds, completed }) => {
+    timerValid = completed;
     if (completed) {
-      return <span><b>You are Late!!</b></span>;
+      return (
+        <span>
+          <b>You are Late!!</b>
+        </span>
+      );
     } else {
       return (
         <div>
-          <span>{days} days</span>
-          <span>{hours} hours</span>
-          <span>{minutes} minutes</span>
-          <span>{seconds} seconds</span>
+          <strong>
+            <span>{hours} hours </span>
+            <span>{minutes} minutes </span>
+            <span>{seconds} seconds </span>
+          </strong>
         </div>
       );
     }
   };
 
-  const updatedClass=`${'btn btn-dark'} ${!timerValid ? 'disabled' : ''}`;
+  const updateClass = () => {
+    return `${"btn btn-dark"} ${timerValid ? "disabled" : ""}`;
+  };
+
   return (
     <>
       <div
@@ -70,20 +79,20 @@ function Votingarea(props) {
       >
         <div className="row align-items-start">
           <div className="col border border-dark border-2">
-            <strong>{props.details.teams[0]}</strong>
+            <h4><strong>{props.details.teams[0]}</strong></h4>
           </div>
           <div className="col border border-dark border-2">
             Timer ends in <br />
-              <Countdown date={targetDate} renderer={renderer} />
+            <Countdown date={newDate} renderer={renderer} />
           </div>
           <div className="col border border-dark border-2">
-            <strong>{props.details.teams[1]}</strong>
+          <h4><strong>{props.details.teams[1]}</strong></h4>
           </div>
           <div className="row align-items-center p-3">
             <center>
               <button
                 type="button"
-                className={updatedClass}
+                className={updateClass()}
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
               >
@@ -94,7 +103,7 @@ function Votingarea(props) {
           <div
             className="modal fade"
             id="exampleModal"
-            tabindex="-1"
+            tabIndex="-1"
             aria-labelledby="exampleModalLabel"
             aria-hidden="true"
           >

@@ -2,60 +2,67 @@ import React, { useEffect, useState } from "react";
 import "../styles/Playground.css";
 import Votingarea from "./Votingarea";
 import UpcomingFixtures from "./UpcomingFixtures";
-import data from "../sample.json";
-import { useAuth0 } from "@auth0/auth0-react";
-import Leaderboard from "./Leaderboard";
+import result from "../sample.json";
 import Navbar from "./Navbar";
+import axios from "axios";
 
 function Playground() {
   const [todayMatchDetails, setTodayMatchDetails] = useState([]);
   const [fixtures, setFixtures] = useState([]);
-  const { isAuthenticated } = useAuth0();
+  // const [data, setData] = useState({});
+  const [loading, setLoading] = useState(true);
+  var todayDate;
+  
+  // const apiURL =
+  //   "https://api.cricapi.com/v1/series_info?apikey=bac285bc-4ba5-426d-a2fb-bd7d4547807d&offset=0&id=bd830e89-3420-4df5-854d-82cfab3e1e04";
 
   useEffect(() => {
-    function updateData() {
-      setFixtures(data.data.matchList.filter((match) => match.teamInfo));
-      console.log(fixtures);
-    }
-    updateData();
+    // axios.get(apiURL).then((response) => {
+      // setData(result);
+      // console.log(response.data);
+      setFixtures(result.data.matchList.filter((match) => match.teamInfo));
+      // console.log(fixtures);
 
-    function matchDate() {
       const today = new Date();
 
       const date = today.getDate();
       const month = today.getMonth() + 1;
       const year = today.getFullYear();
 
-      var todayDate = `${year}-${month}-${date}`;
+      todayDate = `${year}-${month}-${date}`;
 
       setTodayMatchDetails(
-        data.data.matchList.filter((ele) => ele.date === todayDate)
+        result.data.matchList.filter((ele) => ele.date === todayDate)
       );
-      console.log(todayMatchDetails);
-    }
-    matchDate();
+      setLoading(false);
+      // console.log(fixtures)
+    // });
     // eslint-disable-next-line
   }, []);
-  console.log("huehue");
   return (
     <>
-      <div className="navbar">
-        <Navbar />
-      </div>
-      <div className="wrapper">
-        <center>
-          <h2>
-            <strong>Today's Matches</strong>
-          </h2>
-        </center>
-      </div>
-      {todayMatchDetails.map((item) => (
-        <div key={item.id} className="container">
-          <Votingarea details={item} />
-        </div>
-      ))}
-      <UpcomingFixtures todayMatch={fixtures} />
-      <Leaderboard />
+      {loading ? (
+        <p>loading</p>
+      ) : (
+        <>
+          <div className="navbar">
+            <Navbar />
+          </div>
+          <div className="wrapper">
+            <center>
+              <h2>
+                <strong>Today's Matches</strong>
+              </h2>
+            </center>
+          </div>
+          {todayMatchDetails.map((item) => (
+            <div key={item.id} className="container">
+              <Votingarea details={item} />
+            </div>
+          ))}
+          <UpcomingFixtures todayMatch={fixtures} presentDay={todayDate}/>
+        </>
+      )}
     </>
   );
 }

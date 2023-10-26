@@ -10,6 +10,7 @@ const port = process.env.PORT || 3001;
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
+app.use(express.json())
 
 // MongoDB connection
 mongoose.connect("mongodb://localhost:27017/wcdb", {
