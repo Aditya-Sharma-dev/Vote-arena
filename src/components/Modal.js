@@ -58,17 +58,20 @@ function Modal(props) {
               aria-label="Close"
             ></button>
           </div>
-          <div className="modal-body">
+          <div className="modal-body d-flex flex-column align-items-center">
             <div className="form-check">
               <input
                 className="form-check-input"
                 type="radio"
                 name="exampleRadios"
-                id="exampleRadios1"
-                value={props.details.teams[0]}
+                id={props.details.teams[0]}
                 onChange={handleRadioChange}
+                value={props.details.teams[0]}
               />
-              <label className="form-check-label" htmlFor="exampleRadios1">
+              <label
+                className="form-check-label"
+                htmlFor={props.details.teams[0]}
+              >
                 <p>{props.details.teams[0]}</p>
               </label>
             </div>
@@ -77,11 +80,14 @@ function Modal(props) {
                 className="form-check-input"
                 type="radio"
                 name="exampleRadios"
-                id="exampleRadios2"
+                id={props.details.teams[1]}
                 onChange={handleRadioChange}
                 value={props.details.teams[1]}
               />
-              <label className="form-check-label" htmlFor="exampleRadios2">
+              <label
+                className="form-check-label"
+                htmlFor={props.details.teams[1]}
+              >
                 <p>{props.details.teams[1]}</p>
               </label>
             </div>
