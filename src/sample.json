@@ -1,5 +1,5 @@
 {
-  "apikey": "bac285bc-4ba5-426d-a2fb-bd7d4547807d",
+  "apikey": "92cf5746-3e34-4e72-ab3e-3809d971aa9d",
   "data": {
     "info": {
       "id": "bd830e89-3420-4df5-854d-82cfab3e1e04",
@@ -107,7 +107,7 @@
         "id": "49222ce0-b203-48b7-951e-019e4fd87a1d",
         "name": "Pakistan vs South Africa, 26th Match",
         "matchType": "odi",
-        "status": "Match not started",
+        "status": "South Africa won by 1 wkt",
         "venue": "MA Chidambaram Stadium, Chennai",
         "date": "2023-10-27",
         "dateTimeGMT": "2023-10-27T08:30:00",
@@ -127,11 +127,11 @@
             "img": "https://g.cricapi.com/iapi/82-637877071839088912.webp?w=48"
           }
         ],
-        "fantasyEnabled": false,
-        "bbbEnabled": false,
+        "fantasyEnabled": true,
+        "bbbEnabled": true,
         "hasSquad": true,
-        "matchStarted": false,
-        "matchEnded": false
+        "matchStarted": true,
+        "matchEnded": true
       },
       {
         "id": "6ba8357e-3182-4008-9625-8962bd4e08cb",
@@ -189,7 +189,7 @@
         ],
         "fantasyEnabled": false,
         "bbbEnabled": false,
-        "hasSquad": false,
+        "hasSquad": true,
         "matchStarted": false,
         "matchEnded": false
       },
@@ -1421,12 +1421,12 @@
   },
   "status": "success",
   "info": {
-    "hitsToday": 4,
+    "hitsToday": 5,
     "hitsUsed": 1,
     "hitsLimit": 100,
     "credits": 0,
-    "server": 11,
-    "queryTime": 31.0074,
+    "server": 9,
+    "queryTime": 28.5137,
     "s": 0,
     "cache": 0
   }
