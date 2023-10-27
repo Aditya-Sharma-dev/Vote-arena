@@ -16,7 +16,7 @@ function Modal(props) {
         timestamp: new Date().toISOString(),
       };
 
-      fetch("http://localhost:3001/store-vote", {
+      fetch("https://vote-arena-backend.vercel.app/store-vote", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

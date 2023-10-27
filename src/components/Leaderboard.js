@@ -7,7 +7,7 @@ function Leaderboard() {
 
   useEffect(() => {
     // Fetch data from the backend API route
-    fetch("http://localhost:3001/api/fetch-data")
+    fetch("https://vote-arena-backend.vercel.app/api/fetch-data")
       .then((response) => {
         console.log(response.status);
         return response.json();
