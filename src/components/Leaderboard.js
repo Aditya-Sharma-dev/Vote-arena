@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
+import "../styles/Leaderboard.css";
 
 function Leaderboard() {
   const [data, setData] = useState([]);
@@ -20,7 +21,7 @@ function Leaderboard() {
       });
   }, []);
   return (
-    <div className="container">
+    <div className="container" style={{ height: "100vh" }}>
       <div className="navbar">
         <Navbar />
       </div>

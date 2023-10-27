@@ -3,6 +3,7 @@ import Home from "./components/Home";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Leaderboard from "./components/Leaderboard";
 import Playground from "./components/Playground";
+import Discussions from "./components/Discussions";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Playground />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
+          <Route path="/fixtures" element={<Discussions/>} />
           <Route path="*" element={<Home />} />
         </Routes>
       </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/Votingarea.css";
 import { useAuth0 } from "@auth0/auth0-react";
 import Countdown from "react-countdown";
@@ -42,7 +42,8 @@ function Votingarea(props) {
   };
 
   const targetDate = new Date(props.details.dateTimeGMT);
-  const newDate = new Date(targetDate.getTime() + (5.5*60*60*1000));
+  const newDate = new Date(targetDate.getTime() + 5.5 * 60 * 60 * 1000);
+  const [newClass, setNewClass] = useState("");
 
   var timerValid;
 
@@ -66,10 +67,9 @@ function Votingarea(props) {
       );
     }
   };
-
-  const updateClass = () => {
-    return `${"btn btn-dark"} ${timerValid ? "disabled" : ""}`;
-  };
+  useEffect(() => {
+    setNewClass(`${"btn btn-dark"} ${timerValid ? "disabled" : ""}`);
+  }, []);
 
   return (
     <>
@@ -79,20 +79,24 @@ function Votingarea(props) {
       >
         <div className="row align-items-start">
           <div className="col border border-dark border-2">
-            <h4><strong>{props.details.teams[0]}</strong></h4>
+            <h4>
+              <strong>{props.details.teams[0]}</strong>
+            </h4>
           </div>
           <div className="col border border-dark border-2">
             Timer ends in <br />
             <Countdown date={newDate} renderer={renderer} />
           </div>
           <div className="col border border-dark border-2">
-          <h4><strong>{props.details.teams[1]}</strong></h4>
+            <h4>
+              <strong>{props.details.teams[1]}</strong>
+            </h4>
           </div>
           <div className="row align-items-center p-3">
             <center>
               <button
                 type="button"
-                className={updateClass()}
+                className={newClass}
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
               >

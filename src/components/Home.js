@@ -35,7 +35,7 @@ function Home() {
                   <strong>It's Fast: </strong>Voting takes just a few clicks.
                 </li>
                 <li>
-                  <strong>It's Fun:</strong>Engage in friendly debates and
+                  <strong>It's Fun: </strong>Engage in friendly debates and
                   discussions.
                 </li>
                 <li>
@@ -62,7 +62,7 @@ function Home() {
         </div>
       </div>
       <footer style={{ marginTop: "15px" }}>
-        <center> <strong>Made with ❤️ in INDIA by <a href="www.github.com/Aditya-sharma-dev/" target="_blank">Aditya</a></strong></center>
+        <center> <strong>Made with ❤️ in INDIA by <a href="https://www.github.com/Aditya-sharma-dev/" target="_blank">Aditya</a></strong></center>
       </footer>
     </div>
   );

@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use(express.json())
 
 // MongoDB connection
-mongoose.connect("mongodb://localhost:27017/wcdb", {
+mongoose.connect("mongodb+srv://vote-arena:ZXfHGmqvNyUCSEO6@vote-arena.qr3pnmt.mongodb.net/?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });

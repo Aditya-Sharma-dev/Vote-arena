@@ -2,6 +2,7 @@ import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import "../styles/Navbar.css";
 import { Link } from "react-router-dom";
+import logo from "../assets/icc-logo.png";
 
 function Navbar() {
   const { user, logout, isAuthenticated } = useAuth0();
@@ -11,11 +12,12 @@ function Navbar() {
       // logoutParams: {
       //   returnTo: window.location.origin,
       // },
-      openUrl(url){
+      openUrl(url) {
         window.location.replace(url);
-      }
-    }); 
+      },
+    });
   };
+
   return (
     <nav
       className="navbar bg-dark navbar-expand-lg border-bottom border-body fixed-top"
@@ -23,6 +25,7 @@ function Navbar() {
     >
       <div className="container-fluid" id="okok">
         <a className="navbar-brand" href="/">
+          <img src={logo} alt="" height="40px" width="40px" />
           World Cup 2023
         </a>
         <button
@@ -53,13 +56,17 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">
+              <Link className="nav-link" to="/fixtures">
                 Fixtures
-              </a>
+              </Link>
             </li>
           </ul>
           <div className="right">
-            <form className="d-flex" role="search">
+            <form
+              className="d-flex"
+              role="search"
+              style={{ alignItems: "center" }}
+            >
               {isAuthenticated && (
                 <>
                   <p style={{ color: "white" }}>Welcome, {user.name}</p>
