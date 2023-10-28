@@ -10,13 +10,16 @@ const port = process.env.PORT || 3001;
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.json())
+app.use(express.json());
 
 // MongoDB connection
-mongoose.connect("mongodb+srv://vote-arena:ZXfHGmqvNyUCSEO6@vote-arena.qr3pnmt.mongodb.net/?retryWrites=true&w=majority", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(
+  "mongodb+srv://vote-arena:ZXfHGmqvNyUCSEO6@vote-arena.qr3pnmt.mongodb.net/?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 const db = mongoose.connection;
 
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
@@ -34,11 +37,11 @@ const voteSchema = new mongoose.Schema({
 const Vote = mongoose.model("Vote", voteSchema);
 
 const yourSchema = new mongoose.Schema({
-    name: String,
-    points: Number,
+  name: String,
+  points: Number,
 });
-  
-const YourModel = mongoose.model('YourModel', yourSchema);
+
+const YourModel = mongoose.model("YourModel", yourSchema);
 
 // Handle POST requests for storing votes
 app.post("/store-vote", async (req, res) => {
@@ -59,16 +62,16 @@ app.post("/store-vote", async (req, res) => {
   }
 });
 
-app.get('/api/fetch-data', async (req, res) => {
-    try {
-      const data = await YourModel.find(); 
-      res.json(data);
-      console.log(data);
-    } catch (error) {
-      console.error('Error fetching data:', error);
-      res.status(500).json({ error: 'Failed to fetch data' });
-    }
-  });
+app.get("/api/fetch-data", async (req, res) => {
+  try {
+    const data = await YourModel.find();
+    res.json(data);
+    console.log(data);
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    res.status(500).json({ error: "Failed to fetch data" });
+  }
+});
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

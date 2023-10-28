@@ -137,7 +137,7 @@
         "id": "6ba8357e-3182-4008-9625-8962bd4e08cb",
         "name": "Australia vs New Zealand, 27th Match",
         "matchType": "odi",
-        "status": "Match not started",
+        "status": "Australia won by 5 runs",
         "venue": "Himachal Pradesh Cricket Association Stadium, Dharamsala",
         "date": "2023-10-28",
         "dateTimeGMT": "2023-10-28T05:00:00",
@@ -157,17 +157,17 @@
             "img": "https://g.cricapi.com/iapi/57-637877076980737903.webp?w=48"
           }
         ],
-        "fantasyEnabled": false,
-        "bbbEnabled": false,
+        "fantasyEnabled": true,
+        "bbbEnabled": true,
         "hasSquad": true,
-        "matchStarted": false,
-        "matchEnded": false
+        "matchStarted": true,
+        "matchEnded": true
       },
       {
         "id": "1d6dea8b-f1d6-49f5-895a-729c773c074c",
         "name": "Netherlands vs Bangladesh, 28th Match",
         "matchType": "odi",
-        "status": "Match not started",
+        "status": "Netherlands won by 87 runs",
         "venue": "Eden Gardens, Kolkata",
         "date": "2023-10-28",
         "dateTimeGMT": "2023-10-28T08:30:00",
@@ -187,11 +187,11 @@
             "img": "https://g.cricapi.com/iapi/55-637877084465746618.webp?w=48"
           }
         ],
-        "fantasyEnabled": false,
-        "bbbEnabled": false,
+        "fantasyEnabled": true,
+        "bbbEnabled": true,
         "hasSquad": true,
-        "matchStarted": false,
-        "matchEnded": false
+        "matchStarted": true,
+        "matchEnded": true
       },
       {
         "id": "7302a459-d31b-4629-9ac3-e8c9eefc9fb4",
@@ -1421,13 +1421,13 @@
   },
   "status": "success",
   "info": {
-    "hitsToday": 5,
+    "hitsToday": 1,
     "hitsUsed": 1,
     "hitsLimit": 100,
     "credits": 0,
-    "server": 9,
-    "queryTime": 28.5137,
+    "server": 13,
+    "queryTime": 34.907,
     "s": 0,
-    "cache": 0
+    "cache": 1
   }
 }

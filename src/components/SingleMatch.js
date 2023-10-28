@@ -17,7 +17,7 @@ function SingleMatch({ detail }) {
             className="card mb-3"
             style={{
               width: "18rem",
-              backgroundColor: "#e8d449",
+              backgroundColor: "rgb(14 217 255)",
               height: "10rem",
             }}
           >
@@ -59,7 +59,7 @@ function SingleMatch({ detail }) {
             className="card text-end mb-3"
             style={{
               width: "18rem",
-              backgroundColor: "#c848fa",
+              backgroundColor: "rgb(255 109 50)",
               height: "10rem",
             }}
           >
