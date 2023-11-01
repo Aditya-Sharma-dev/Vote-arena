@@ -197,7 +197,7 @@
         "id": "7302a459-d31b-4629-9ac3-e8c9eefc9fb4",
         "name": "India vs England, 29th Match",
         "matchType": "odi",
-        "status": "Match not started",
+        "status": "India won by 100 runs",
         "venue": "Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow",
         "date": "2023-10-29",
         "dateTimeGMT": "2023-10-29T08:30:00",
@@ -217,17 +217,17 @@
             "img": "https://g.cricapi.com/iapi/31-637877061080567215.webp?w=48"
           }
         ],
-        "fantasyEnabled": false,
-        "bbbEnabled": false,
+        "fantasyEnabled": true,
+        "bbbEnabled": true,
         "hasSquad": true,
-        "matchStarted": false,
-        "matchEnded": false
+        "matchStarted": true,
+        "matchEnded": true
       },
       {
         "id": "cece6bb5-a6f6-4134-baa9-cd888793b477",
         "name": "Afghanistan vs Sri Lanka, 30th Match",
         "matchType": "odi",
-        "status": "Match not started",
+        "status": "Afghanistan won by 7 wkts",
         "venue": "Maharashtra Cricket Association Stadium, Pune",
         "date": "2023-10-30",
         "dateTimeGMT": "2023-10-30T08:30:00",
@@ -247,17 +247,17 @@
             "img": "https://g.cricapi.com/iapi/4191-638101639309122979.webp?w=48"
           }
         ],
-        "fantasyEnabled": false,
-        "bbbEnabled": false,
+        "fantasyEnabled": true,
+        "bbbEnabled": true,
         "hasSquad": true,
-        "matchStarted": false,
-        "matchEnded": false
+        "matchStarted": true,
+        "matchEnded": true
       },
       {
         "id": "96a377ab-cb46-4b7a-83c0-34721a790935",
         "name": "Pakistan vs Bangladesh, 31st Match",
         "matchType": "odi",
-        "status": "Match not started",
+        "status": "Pakistan won by 7 wkts",
         "venue": "Eden Gardens, Kolkata",
         "date": "2023-10-31",
         "dateTimeGMT": "2023-10-31T08:30:00",
@@ -277,11 +277,11 @@
             "img": "https://g.cricapi.com/iapi/66-637877075103236690.webp?w=48"
           }
         ],
-        "fantasyEnabled": false,
-        "bbbEnabled": false,
+        "fantasyEnabled": true,
+        "bbbEnabled": true,
         "hasSquad": true,
-        "matchStarted": false,
-        "matchEnded": false
+        "matchStarted": true,
+        "matchEnded": true
       },
       {
         "id": "143e530a-5b1c-4880-9c86-80e7249368a7",
@@ -1425,9 +1425,9 @@
     "hitsUsed": 1,
     "hitsLimit": 100,
     "credits": 0,
-    "server": 13,
-    "queryTime": 34.907,
+    "server": 15,
+    "queryTime": 57.3944,
     "s": 0,
-    "cache": 1
+    "cache": 0
   }
 }

@@ -9,8 +9,22 @@ function UpcomingFixtures(props) {
   const date = today.getDate();
   const month = today.getMonth() + 1;
   const year = today.getFullYear();
+  function checkDateDigit(date) {
+    var count = 0;
+    while (date > 0) {
+      date = Math.floor(date / 10);
+      count++;
+      console.log(count);
+    }
+    if (count === 1) {
+      console.log("called");
+      return true;
+    }
+    return false;
+  }
 
-  var todayDate = `${year}-${month}-${date}`;
+  var todayDate =
+    `${year}-${month}-` + `${checkDateDigit(date) ? `0${date}` : date}`;
 
   const futureFixtures = props.todayMatch.filter((item) => {
     return !item.matchEnded && item.date !== todayDate;

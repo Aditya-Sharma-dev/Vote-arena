@@ -18,23 +18,36 @@ function Playground() {
   // const apiURL =
   //   "https://api.cricapi.com/v1/series_info?apikey=92cf5746-3e34-4e72-ab3e-3809d971aa9d&offset=0&id=bd830e89-3420-4df5-854d-82cfab3e1e04";
 
-  useEffect(() => { 
+  useEffect(() => {
     setTimeout(() => {
       setFixtures(result.data.matchList.filter((match) => match.teamInfo));
-    
-    const today = new Date();
 
-    const date = today.getDate();
-    const month = today.getMonth() + 1;
-    const year = today.getFullYear();
+      const today = new Date();
 
-    setFixtures(result.data.matchList.filter((match) => match.teamInfo));
-    todayDate = `${year}-${month}-${date}`;
+      var date = today.getDate();
+      const month = today.getMonth() + 1;
+      const year = today.getFullYear();
+      function checkDateDigit(date) {
+        var count = 0;
+        while (date > 0) {
+          date = Math.floor(date / 10);
+          count++;
+        }
+        if (count === 1) {
+          return true;
+        }
+        return false;
+      }
 
-    setTodayMatchDetails(
-      result.data.matchList.filter((ele) => ele.date === todayDate)
-    );
-    setLoading(false);
+      setFixtures(result.data.matchList.filter((match) => match.teamInfo));
+      todayDate =
+        `${year}-${month}-` + `${checkDateDigit(date) ? `0${date}` : date}`;
+      // console.log(todayDate);
+
+      setTodayMatchDetails(
+        result.data.matchList.filter((ele) => ele.date === todayDate)
+      );
+      setLoading(false);
     }, 1500);
     // eslint-disable-next-line
   }, []);
@@ -50,11 +63,10 @@ function Playground() {
               <strong>Today's Matches</strong>
             </h2>
           </center>
-          { 
-          todayMatchDetails.map((item) => (
+          {todayMatchDetails.map((item) => (
             <div key={item.id} className="container">
               <Votingarea details={item} />
-              <Modal key = {item.id} details={item} />
+              <Modal key={item.id} details={item} />
             </div>
           ))}
           <UpcomingFixtures todayMatch={fixtures} presentDay={todayDate} />
