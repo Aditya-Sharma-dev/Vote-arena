@@ -287,7 +287,7 @@
         "id": "143e530a-5b1c-4880-9c86-80e7249368a7",
         "name": "New Zealand vs South Africa, 32nd Match",
         "matchType": "odi",
-        "status": "Match not started",
+        "status": "South Africa won by 190 runs",
         "venue": "Maharashtra Cricket Association Stadium, Pune",
         "date": "2023-11-01",
         "dateTimeGMT": "2023-11-01T08:30:00",
@@ -307,17 +307,17 @@
             "img": "https://g.cricapi.com/iapi/82-637877071839088912.webp?w=48"
           }
         ],
-        "fantasyEnabled": false,
-        "bbbEnabled": false,
+        "fantasyEnabled": true,
+        "bbbEnabled": true,
         "hasSquad": true,
-        "matchStarted": false,
-        "matchEnded": false
+        "matchStarted": true,
+        "matchEnded": true
       },
       {
         "id": "e79762a5-ca3c-42d0-b9ec-c2feef6190ac",
         "name": "India vs Sri Lanka, 33rd Match",
         "matchType": "odi",
-        "status": "Match not started",
+        "status": "India won by 302 runs",
         "venue": "Wankhede Stadium, Mumbai",
         "date": "2023-11-02",
         "dateTimeGMT": "2023-11-02T08:30:00",
@@ -337,17 +337,17 @@
             "img": "https://g.cricapi.com/iapi/4191-638101639309122979.webp?w=48"
           }
         ],
-        "fantasyEnabled": false,
-        "bbbEnabled": false,
+        "fantasyEnabled": true,
+        "bbbEnabled": true,
         "hasSquad": true,
-        "matchStarted": false,
-        "matchEnded": false
+        "matchStarted": true,
+        "matchEnded": true
       },
       {
         "id": "816388ec-31c9-428d-aeed-87e0c80c2f47",
         "name": "Netherlands vs Afghanistan, 34th Match",
         "matchType": "odi",
-        "status": "Match not started",
+        "status": "Afghanistan won by 7 wkts",
         "venue": "Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow",
         "date": "2023-11-03",
         "dateTimeGMT": "2023-11-03T08:30:00",
@@ -367,11 +367,11 @@
             "img": "https://g.cricapi.com/iapi/55-637877084465746618.webp?w=48"
           }
         ],
-        "fantasyEnabled": false,
-        "bbbEnabled": false,
-        "hasSquad": false,
-        "matchStarted": false,
-        "matchEnded": false
+        "fantasyEnabled": true,
+        "bbbEnabled": true,
+        "hasSquad": true,
+        "matchStarted": true,
+        "matchEnded": true
       },
       {
         "id": "3d6ba49c-913d-47ab-bf91-e725214c0a98",
@@ -1425,8 +1425,8 @@
     "hitsUsed": 1,
     "hitsLimit": 100,
     "credits": 0,
-    "server": 15,
-    "queryTime": 57.3944,
+    "server": 5,
+    "queryTime": 80.7629,
     "s": 0,
     "cache": 0
   }
