@@ -40,7 +40,7 @@ function Modal(props) {
   return (
     <div
       className="modal fade"
-      id={props.details.teams[0]}
+      id={props.details.teams[1]}
       tabIndex="-1"
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
