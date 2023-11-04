@@ -60,7 +60,7 @@ function Votingarea(props) {
                 type="button"
                 className={newClass}
                 data-bs-toggle="modal"
-                data-bs-target={`#${props.details.teams[1]}`}
+                data-bs-target={`#${props.details.teams[0]}`}
               >
                 Click here to vote
               </button>

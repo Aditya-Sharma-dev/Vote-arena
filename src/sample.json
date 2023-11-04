@@ -377,7 +377,7 @@
         "id": "3d6ba49c-913d-47ab-bf91-e725214c0a98",
         "name": "New Zealand vs Pakistan, 35th Match",
         "matchType": "odi",
-        "status": "Match not started",
+        "status": "Pakistan won by 21 runs - DLS method",
         "venue": "M.Chinnaswamy Stadium, Bengaluru",
         "date": "2023-11-04",
         "dateTimeGMT": "2023-11-04T05:00:00",
@@ -397,17 +397,17 @@
             "img": "https://g.cricapi.com/iapi/66-637877075103236690.webp?w=48"
           }
         ],
-        "fantasyEnabled": false,
-        "bbbEnabled": false,
+        "fantasyEnabled": true,
+        "bbbEnabled": true,
         "hasSquad": true,
-        "matchStarted": false,
-        "matchEnded": false
+        "matchStarted": true,
+        "matchEnded": true
       },
       {
         "id": "da784602-6fba-435c-a1ec-d432bf2c56a1",
         "name": "England vs Australia, 36th Match",
         "matchType": "odi",
-        "status": "Match not started",
+        "status": "Australia won by 33 runs",
         "venue": "Narendra Modi Stadium, Ahmedabad",
         "date": "2023-11-04",
         "dateTimeGMT": "2023-11-04T08:30:00",
@@ -427,11 +427,11 @@
             "img": "https://g.cricapi.com/iapi/23-637877072894080569.webp?w=48"
           }
         ],
-        "fantasyEnabled": false,
-        "bbbEnabled": false,
+        "fantasyEnabled": true,
+        "bbbEnabled": true,
         "hasSquad": true,
-        "matchStarted": false,
-        "matchEnded": false
+        "matchStarted": true,
+        "matchEnded": true
       },
       {
         "id": "d92666c5-3921-4dc7-a204-81039d6be88d",
@@ -1425,8 +1425,8 @@
     "hitsUsed": 1,
     "hitsLimit": 100,
     "credits": 0,
-    "server": 5,
-    "queryTime": 80.7629,
+    "server": 9,
+    "queryTime": 39.7179,
     "s": 0,
     "cache": 0
   }
