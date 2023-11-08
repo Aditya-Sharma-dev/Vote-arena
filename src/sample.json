@@ -437,7 +437,7 @@
         "id": "d92666c5-3921-4dc7-a204-81039d6be88d",
         "name": "India vs South Africa, 37th Match",
         "matchType": "odi",
-        "status": "Match not started",
+        "status": "India won by 243 runs",
         "venue": "Eden Gardens, Kolkata",
         "date": "2023-11-05",
         "dateTimeGMT": "2023-11-05T08:30:00",
@@ -457,17 +457,17 @@
             "img": "https://g.cricapi.com/iapi/82-637877071839088912.webp?w=48"
           }
         ],
-        "fantasyEnabled": false,
-        "bbbEnabled": false,
+        "fantasyEnabled": true,
+        "bbbEnabled": true,
         "hasSquad": true,
-        "matchStarted": false,
-        "matchEnded": false
+        "matchStarted": true,
+        "matchEnded": true
       },
       {
         "id": "4975cccc-1c24-4805-bd95-160b412b4b67",
         "name": "Bangladesh vs Sri Lanka, 38th Match",
         "matchType": "odi",
-        "status": "Match not started",
+        "status": "Bangladesh won by 3 wkts",
         "venue": "Arun Jaitley Stadium, Delhi",
         "date": "2023-11-06",
         "dateTimeGMT": "2023-11-06T08:30:00",
@@ -487,17 +487,17 @@
             "img": "https://g.cricapi.com/iapi/4191-638101639309122979.webp?w=48"
           }
         ],
-        "fantasyEnabled": false,
-        "bbbEnabled": false,
+        "fantasyEnabled": true,
+        "bbbEnabled": true,
         "hasSquad": true,
-        "matchStarted": false,
-        "matchEnded": false
+        "matchStarted": true,
+        "matchEnded": true
       },
       {
         "id": "ba462dd6-3909-4511-824d-4f00c4c61cc9",
         "name": "Australia vs Afghanistan, 39th Match",
         "matchType": "odi",
-        "status": "Match not started",
+        "status": "Australia won by 3 wkts",
         "venue": "Wankhede Stadium, Mumbai",
         "date": "2023-11-07",
         "dateTimeGMT": "2023-11-07T08:30:00",
@@ -517,17 +517,17 @@
             "img": "https://g.cricapi.com/iapi/6-637877070670541994.webp?w=48"
           }
         ],
-        "fantasyEnabled": false,
-        "bbbEnabled": false,
+        "fantasyEnabled": true,
+        "bbbEnabled": true,
         "hasSquad": true,
-        "matchStarted": false,
-        "matchEnded": false
+        "matchStarted": true,
+        "matchEnded": true
       },
       {
         "id": "013bc7ea-b33e-4136-b7cd-eb585b87a80c",
         "name": "England vs Netherlands, 40th Match",
         "matchType": "odi",
-        "status": "Match not started",
+        "status": "England won by 160 runs",
         "venue": "Maharashtra Cricket Association Stadium, Pune",
         "date": "2023-11-08",
         "dateTimeGMT": "2023-11-08T08:30:00",
@@ -547,11 +547,11 @@
             "img": "https://g.cricapi.com/iapi/55-637877084465746618.webp?w=48"
           }
         ],
-        "fantasyEnabled": false,
-        "bbbEnabled": false,
+        "fantasyEnabled": true,
+        "bbbEnabled": true,
         "hasSquad": true,
-        "matchStarted": false,
-        "matchEnded": false
+        "matchStarted": true,
+        "matchEnded": true
       },
       {
         "id": "3b42e16d-1558-448b-8da7-72b0c0fb1292",
@@ -1426,7 +1426,7 @@
     "hitsLimit": 100,
     "credits": 0,
     "server": 9,
-    "queryTime": 39.7179,
+    "queryTime": 48.6604,
     "s": 0,
     "cache": 0
   }

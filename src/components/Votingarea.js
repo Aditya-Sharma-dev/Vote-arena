@@ -29,6 +29,9 @@ function Votingarea(props) {
       );
     }
   };
+  function removeSpace(word){
+    return word.replace(/\s/g,'');
+  }
   useEffect(() => {
     setNewClass(`${"btn btn-dark"} ${timerValid ? "disabled" : ""}`);
   }, []);
@@ -60,7 +63,7 @@ function Votingarea(props) {
                 type="button"
                 className={newClass}
                 data-bs-toggle="modal"
-                data-bs-target={`#${props.details.teams[0]}`}
+                data-bs-target={`#${removeSpace(props.details.teams[0])}`}
               >
                 Click here to vote
               </button>

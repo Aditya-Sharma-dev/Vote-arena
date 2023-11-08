@@ -37,10 +37,13 @@ function Modal(props) {
       alert("Please select an option before voting.");
     }
   };
+  function removeSpace(word){
+    return word.replace(/\s/g,'');
+  }
   return (
     <div
       className="modal fade"
-      id={props.details.teams[0]}
+      id={removeSpace(props.details.teams[0])}
       tabIndex="-1"
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
