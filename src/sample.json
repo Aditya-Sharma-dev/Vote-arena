@@ -557,7 +557,7 @@
         "id": "3b42e16d-1558-448b-8da7-72b0c0fb1292",
         "name": "New Zealand vs Sri Lanka, 41st Match",
         "matchType": "odi",
-        "status": "Match not started",
+        "status": "New Zealand won by 5 wkts",
         "venue": "M.Chinnaswamy Stadium, Bengaluru",
         "date": "2023-11-09",
         "dateTimeGMT": "2023-11-09T08:30:00",
@@ -577,17 +577,17 @@
             "img": "https://g.cricapi.com/iapi/4191-638101639309122979.webp?w=48"
           }
         ],
-        "fantasyEnabled": false,
-        "bbbEnabled": false,
+        "fantasyEnabled": true,
+        "bbbEnabled": true,
         "hasSquad": true,
-        "matchStarted": false,
-        "matchEnded": false
+        "matchStarted": true,
+        "matchEnded": true
       },
       {
         "id": "6f70887a-97ce-4c38-a990-bda4166ac12a",
         "name": "South Africa vs Afghanistan, 42nd Match",
         "matchType": "odi",
-        "status": "Match not started",
+        "status": "South Africa won by 5 wkts",
         "venue": "Narendra Modi Stadium, Ahmedabad",
         "date": "2023-11-10",
         "dateTimeGMT": "2023-11-10T08:30:00",
@@ -607,17 +607,17 @@
             "img": "https://g.cricapi.com/iapi/82-637877071839088912.webp?w=48"
           }
         ],
-        "fantasyEnabled": false,
-        "bbbEnabled": false,
+        "fantasyEnabled": true,
+        "bbbEnabled": true,
         "hasSquad": true,
-        "matchStarted": false,
-        "matchEnded": false
+        "matchStarted": true,
+        "matchEnded": true
       },
       {
         "id": "3bc92fd0-1ff2-4ae2-8c30-916f3d2e89a2",
         "name": "India vs Netherlands, 45th Match",
         "matchType": "odi",
-        "status": "Match not started",
+        "status": "India won by 160 runs",
         "venue": "M.Chinnaswamy Stadium, Bengaluru",
         "date": "2023-11-12",
         "dateTimeGMT": "2023-11-12T08:30:00",
@@ -637,17 +637,17 @@
             "img": "https://g.cricapi.com/iapi/55-637877084465746618.webp?w=48"
           }
         ],
-        "fantasyEnabled": false,
-        "bbbEnabled": false,
+        "fantasyEnabled": true,
+        "bbbEnabled": true,
         "hasSquad": true,
-        "matchStarted": false,
-        "matchEnded": false
+        "matchStarted": true,
+        "matchEnded": true
       },
       {
         "id": "3645a8a4-eb75-46d5-b620-be59119bdea8",
         "name": "Australia vs Bangladesh, 43rd Match",
         "matchType": "odi",
-        "status": "Match not started",
+        "status": "Australia won by 8 wkts",
         "venue": "Maharashtra Cricket Association Stadium, Pune",
         "date": "2023-11-11",
         "dateTimeGMT": "2023-11-11T05:00:00",
@@ -667,17 +667,17 @@
             "img": "https://g.cricapi.com/iapi/9-637877074109248302.webp?w=48"
           }
         ],
-        "fantasyEnabled": false,
-        "bbbEnabled": false,
+        "fantasyEnabled": true,
+        "bbbEnabled": true,
         "hasSquad": true,
-        "matchStarted": false,
-        "matchEnded": false
+        "matchStarted": true,
+        "matchEnded": true
       },
       {
         "id": "4e5806f1-7cbf-4dde-8f5e-a6e77821e62c",
         "name": "England vs Pakistan, 44th Match",
         "matchType": "odi",
-        "status": "Match not started",
+        "status": "England won by 93 runs",
         "venue": "Eden Gardens, Kolkata",
         "date": "2023-11-11",
         "dateTimeGMT": "2023-11-11T08:30:00",
@@ -697,27 +697,39 @@
             "img": "https://g.cricapi.com/iapi/66-637877075103236690.webp?w=48"
           }
         ],
-        "fantasyEnabled": false,
-        "bbbEnabled": false,
+        "fantasyEnabled": true,
+        "bbbEnabled": true,
         "hasSquad": true,
-        "matchStarted": false,
-        "matchEnded": false
+        "matchStarted": true,
+        "matchEnded": true
       },
       {
         "id": "e9e3e315-3a35-4386-b151-ab4a027d8b79",
-        "name": "Tbc vs Tbc, 2nd Semi-Final (2nd v 3rd)",
+        "name": "South Africa vs Australia, 2nd Semi-Final (2nd v 3rd)",
         "matchType": "odi",
         "status": "Match not started",
         "venue": "Eden Gardens, Kolkata",
         "date": "2023-11-16",
         "dateTimeGMT": "2023-11-16T08:30:00",
         "teams": [
-          "Tbc",
-          "Tbc"
+          "South Africa",
+          "Australia"
+        ],
+        "teamInfo": [
+          {
+            "name": "Australia",
+            "shortname": "AUS",
+            "img": "https://g.cricapi.com/iapi/6-637877070670541994.webp?w=48"
+          },
+          {
+            "name": "South Africa",
+            "shortname": "RSA",
+            "img": "https://g.cricapi.com/iapi/82-637877071839088912.webp?w=48"
+          }
         ],
         "fantasyEnabled": false,
         "bbbEnabled": false,
-        "hasSquad": false,
+        "hasSquad": true,
         "matchStarted": false,
         "matchEnded": false
       },
@@ -1401,19 +1413,31 @@
       },
       {
         "id": "01b40bfd-43ed-4d5b-a096-e812a9e320bd",
-        "name": "Tbc vs Tbc, 1st Semi-Final(1st v 4th)",
+        "name": "India vs New Zealand, 1st Semi-Final (1st v 4th)",
         "matchType": "odi",
         "status": "Match not started",
         "venue": "Wankhede Stadium, Mumbai",
         "date": "2023-11-15",
         "dateTimeGMT": "2023-11-15T08:30:00",
         "teams": [
-          "Tbc",
-          "Tbc"
+          "India",
+          "New Zealand"
+        ],
+        "teamInfo": [
+          {
+            "name": "India",
+            "shortname": "IND",
+            "img": "https://g.cricapi.com/iapi/31-637877061080567215.webp?w=48"
+          },
+          {
+            "name": "New Zealand",
+            "shortname": "NZ",
+            "img": "https://g.cricapi.com/iapi/57-637877076980737903.webp?w=48"
+          }
         ],
         "fantasyEnabled": false,
         "bbbEnabled": false,
-        "hasSquad": false,
+        "hasSquad": true,
         "matchStarted": false,
         "matchEnded": false
       }
@@ -1425,8 +1449,8 @@
     "hitsUsed": 1,
     "hitsLimit": 100,
     "credits": 0,
-    "server": 9,
-    "queryTime": 48.6604,
+    "server": 13,
+    "queryTime": 57.7653,
     "s": 0,
     "cache": 0
   }
