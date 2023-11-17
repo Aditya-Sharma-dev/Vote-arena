@@ -1,4 +1,5 @@
 .wrapper {
   margin-top: 10% !important;
+  height: 100vh !important;
 }
 ::-webkit-scrollbar {display:none;}

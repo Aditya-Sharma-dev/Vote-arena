@@ -60,7 +60,7 @@ function Playground() {
           <Navbar />
           <center>
             <h2>
-              <strong>Today's Matches</strong>
+              <strong>🔥 THE FUCKING FINAL 🔥</strong>
             </h2>
           </center>
           {todayMatchDetails.map((item) => (
